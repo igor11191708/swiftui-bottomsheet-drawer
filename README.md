@@ -1,5 +1,8 @@
 # Multiplatform (iOS, macOS) SwiftUI bottom sheet drawer
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FThe-Igor%2Fswiftui-bottom-sheet-drawer%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/The-Igor/swiftui-bottom-sheet-drawer)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FThe-Igor%2Fswiftui-bottom-sheet-drawer%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/The-Igor/swiftui-bottom-sheet-drawer)
+
  ## Features
 - [x] Customize component with your own specs
 - [x] iOS and macOS support
