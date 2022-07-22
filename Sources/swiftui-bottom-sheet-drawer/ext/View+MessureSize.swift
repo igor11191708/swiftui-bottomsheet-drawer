@@ -11,6 +11,9 @@ import SwiftUI
 
 public extension View {
     
+    /// Messure a container size
+    /// - Parameter fn: callback
+    /// - Returns: View
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
     func messureSize(_ fn: @escaping (CGSize) -> Void) -> some View {
         overlay(
