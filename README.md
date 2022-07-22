@@ -52,9 +52,9 @@ Possition is passed with **height** of the sheet
 
 ## SwiftUI example of using package
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_01.gif)](https://youtu.be/jLu7gbzGXTo)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/swiftui-bottom-sheet-drawer/blob/main/Sources/img/wallet_02.gif)](https://youtu.be/jLu7gbzGXTo)
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_08.gif)](https://youtu.be/jLu7gbzGXTo)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/swiftui-bottom-sheet-drawer/blob/main/Sources/img/wallet_01.png)](https://youtu.be/jLu7gbzGXTo)
 
 
 
