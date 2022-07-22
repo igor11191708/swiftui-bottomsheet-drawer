@@ -5,9 +5,7 @@
 - [x] iOS and macOS support
 - [x] **dark** and **light** scheme support
 - [x] Observing sheet positions on change if you need to react on it
-- [x] Internal and custom external errors handling
-- [x] Localization (En, Es) All errors and system messages are localized
-
+- [x] Responsive for any size change It's important for macOS while window size changing
 
 ## 1. Create
 
@@ -54,11 +52,10 @@ Possition is passed with **height** of the sheet
 
 ## SwiftUI example of using package
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_01.gif)](https://youtu.be/GW01UyqzaeE)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_01.gif)](https://youtu.be/jLu7gbzGXTo)
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_08.gif)](https://youtu.be/GW01UyqzaeE)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_08.gif)](https://youtu.be/jLu7gbzGXTo)
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/d3-stories-instagram/blob/main/img/img_03.png)](https://youtu.be/GW01UyqzaeE)
 
 
 ## Documentation(API)
