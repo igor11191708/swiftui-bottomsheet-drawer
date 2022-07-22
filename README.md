@@ -36,12 +36,12 @@ Possition is passed with **height** of the sheet
 
     @State private var position: BottomSheetPosision
     
-        BottomSheet(
-            content: SheetCintentView(position: $position)
-        )
-        .onPreferenceChange(BottomSheetPosisionKey.self) {
-            position = $0
-        }
+    BottomSheet(
+        content: SheetCintentView(position: $position)
+    )
+    .onPreferenceChange(BottomSheetPosisionKey.self) {
+        position = $0
+    }
 ```
 
 | Position | Description |
