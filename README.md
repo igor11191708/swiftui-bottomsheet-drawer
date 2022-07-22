@@ -55,7 +55,7 @@ Possition is passed with **height** of the sheet.
 
 ## SwiftUI example of using package
 
-folow the link to get example: 
+Folow the link to get the example exposed in the video: 
 
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/swiftui-bottom-sheet-drawer/blob/main/Sources/img/wallet_02.gif)](https://youtu.be/jLu7gbzGXTo)
 
