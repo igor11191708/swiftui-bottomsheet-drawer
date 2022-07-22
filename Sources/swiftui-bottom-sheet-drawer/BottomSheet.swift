@@ -36,7 +36,7 @@ public struct BottomSheet<Content : View>: View {
     ///Avalable space to do dragging
     let draggerHeight: CGFloat
 
-    /// Dragging lenght after wich trigger move to the next level deppends on the direction of moving
+    /// Dragging length after which trigger move to the next level depends on the direction of moving
     let dragThresholdToAct: CGFloat
 
     /// Animate move
@@ -50,7 +50,7 @@ public struct BottomSheet<Content : View>: View {
     ///   - shift: Visible height of the sheet drawer
     ///   - topIndentation: Space from the very top to the max height drawer can reach
     ///   - showDragButton: Hide or show drag button
-    ///   - draggerHeight: Avalable space to do dragging
+    ///   - draggerHeight: Space sensitive for dragging
     ///   - dragThresholdToAct: Dragging lenght after wich trigger move to the next level deppends on the direction of moving
     ///   - doAnimation: Animate move
     public init(
@@ -122,7 +122,7 @@ public struct BottomSheet<Content : View>: View {
             if limit != offset {
                 updateOffset(width: limit)
                 self.position = position
-            }            
+            }
         #endif
     }
 
