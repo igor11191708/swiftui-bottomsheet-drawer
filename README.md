@@ -29,7 +29,8 @@ just pass a content that's it to start with sheet drawer
 
 
 ### Observing sheet positions
-Possition is passed with **height** of the sheet 
+Observing sheet positions on change if you need to react on it in outsize context of the component.
+Possition is passed with **height** of the sheet. 
 **height** - is enum associated value of *CGFloat*
 
 ```swift
