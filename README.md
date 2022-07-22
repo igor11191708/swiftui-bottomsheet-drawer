@@ -31,9 +31,9 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
 
 
 ### Observing sheet positions
-Observing sheet positions on change if you need to react on it in outsize context of the component.
+Observing sheet positions on change if you need to react on it in the external context of the component.
 Possition is passed with **height** of the sheet. 
-**height** - is enum associated value of *CGFloat*
+**height** - is enum associated with value of type *CGFloat*
 
 ```swift
 
