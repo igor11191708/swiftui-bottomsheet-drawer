@@ -30,7 +30,7 @@ just pass a content that's it to start with sheet drawer
 
 ### Observing sheet positions
 Possition is passed with **height** of the sheet 
-**height** - is enum associated value of CGFloat
+**height** - is enum associated value of *CGFloat*
 
 ```swift
 
@@ -46,9 +46,9 @@ Possition is passed with **height** of the sheet
 
 | Position | Description |
 | --- | --- |
-|**up**| At the top |
-|**middle**| At the middle |
-|**down**| At the bottom |
+|**up(CGFloat)**| At the top |
+|**middle(CGFloat)**| At the middle |
+|**down(CGFloat)**| At the bottom |
 
 ## SwiftUI example of using package
 
