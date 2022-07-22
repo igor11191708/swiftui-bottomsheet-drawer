@@ -26,7 +26,7 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
 * `topIndentation` - Space from the very top to the max height drawer can reach
 * `showDragButton` - Hide or show drag button
 * `draggerHeight` - Space sensitive for dragging
-* `dragThresholdToAct` - Dragging length after which trigger move to the next level depends on the direction of moving
+* `dragThresholdToAct` - Dragging length after which trigger move to the next level depending on the direction of moving
 * `doAnimation` - Animate move
 
 
