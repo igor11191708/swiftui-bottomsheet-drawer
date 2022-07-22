@@ -18,6 +18,10 @@ public enum BottomSheetPosision: Comparable{
     
     case down(CGFloat)
     
+    
+    /// Clone current value and return it with updated height
+    /// - Parameter height: Current height of the sheet drawer
+    /// - Returns: Updated value
     public func update(height : CGFloat) -> Self{
         switch self{
         case .up(_): return .up(height)
