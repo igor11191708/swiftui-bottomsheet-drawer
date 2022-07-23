@@ -10,7 +10,7 @@
 - [x] Observing sheet positions on change if you need to react on it
 - [x] Responsive for any size change It's important for macOS while window size changing
 
-## 1. Create
+## Creation
 
 Put the component into a absolute coordinate space like *ZStack* or *GeometryReader* and just pass a content that's it to start with sheet drawer.
 
@@ -31,7 +31,7 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
 
 
 ### Observing sheet positions
-Observing sheet positions on change if you need to react on it in the external context of the component.
+Observ sheet positions on change if you need to react on it in the external context of the component.
 Possition is passed with **height** of the sheet. 
 **height** - is enum associated with value of type *CGFloat*
 
