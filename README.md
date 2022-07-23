@@ -31,8 +31,8 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
 
 
 ### Observing sheet positions
-Observ sheet positions on change if you need to react on it in the external context of the component.
-Possition is passed with **height** of the sheet. 
+Observe sheet positions on change if you need to react on it in the external context of the component. For example to update layout of the drawer content according a new size of the height.
+Possition **BottomSheetPosision** is passed with **height** of the sheet. 
 **height** - is enum associated with value of type *CGFloat*
 
 ```swift
