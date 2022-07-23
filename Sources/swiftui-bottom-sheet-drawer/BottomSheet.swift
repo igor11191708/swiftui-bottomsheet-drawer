@@ -8,14 +8,16 @@
 import SwiftUI
 
 
-/// Bottom sheet widget
+/// Bottom sheet drawer widget
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
 public struct BottomSheet<Content : View>: View {
 
     private typealias Position = BottomSheetPosision
 
+    /// Offset relatively the base
     @State private var offset: CGFloat = 0
 
+    /// Current position
     @State private var position: BottomSheetPosision
 
 
@@ -117,7 +119,7 @@ public struct BottomSheet<Content : View>: View {
     private func updateSheetSize(size: CGSize) {
         #if os(macOS)
             let h = size.height
-            let limit = revertLimit(h)
+            let limit = calculateLimit(h)
             let position = position.update(height: limit + shift)
             if limit != offset {
                 updateOffset(width: limit)
@@ -127,10 +129,12 @@ public struct BottomSheet<Content : View>: View {
     }
 
 
-    /// Reset drawer position if drag lenght is not enoght to change the drawer position
+    /// Get limit by new height
+    /// - Window size is changed then need to recalculate limit
+    /// - Reset drawer position if drag lenght is not enoght to change the drawer position
     /// - Parameter maxH: Avalable height
     /// - Returns: Reverted offset value
-    private func revertLimit(_ height: CGFloat) -> CGFloat {
+    private func calculateLimit(_ height: CGFloat) -> CGFloat {
 
         var limit: CGFloat = 0
         let maxH = height - shift
@@ -187,7 +191,7 @@ public struct BottomSheet<Content : View>: View {
         var limit: CGFloat = 0
 
         if delta < dragThresholdToAct {
-            limit = revertLimit(height)
+            limit = calculateLimit(height)
         } else {
             let next = moveNext(height, up: up)
             limit = next.limit
