@@ -15,9 +15,9 @@
 Put the component into a absolute coordinate space like *ZStack* or *GeometryReader* and just pass a content that's it to start with sheet drawer.
 
 ```swift
-        BottomSheet(
-            content: ContentView()
-        )
+        ZStack {
+            BottomSheet(content: Color.clear.background(.thinMaterial))
+        }
 ```
 
 ### Optional
