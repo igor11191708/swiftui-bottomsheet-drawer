@@ -20,7 +20,6 @@ public struct BottomSheet<Content : View>: View {
     /// Current position
     @State private var position: BottomSheetPosision
 
-
 // MARK: - Config
 
     /// View
@@ -75,7 +74,6 @@ public struct BottomSheet<Content : View>: View {
         self._position = State(initialValue: .down(max(shift, 25)))
     }
 
-
     /// The content and behavior of the view
     public var body: some View {
         GeometryReader { proxy in
@@ -113,7 +111,6 @@ public struct BottomSheet<Content : View>: View {
         }
     }
 
-
     /// Update sheet size in case of macOS window size change
     /// - Parameter size: Current size
     private func updateSheetSize(size: CGSize) {
@@ -127,7 +124,6 @@ public struct BottomSheet<Content : View>: View {
             }
         #endif
     }
-
 
     /// Get limit by new height
     /// - Window size is changed then need to recalculate limit
@@ -148,7 +144,6 @@ public struct BottomSheet<Content : View>: View {
 
         return limit
     }
-
 
     /// Get spect for the next position
     /// - Parameters:
@@ -201,7 +196,6 @@ public struct BottomSheet<Content : View>: View {
         updateOffset(width: limit)
     }
 
-
     /// Update offset with new limit
     /// - Parameter limit: New limit
     private func updateOffset(width limit: CGFloat) {
@@ -225,7 +219,6 @@ public struct BottomSheet<Content : View>: View {
             EmptyView()
         }
     }
-
 
     /// Create draggable surface
     /// - Parameter h: The height of the draggable surface
