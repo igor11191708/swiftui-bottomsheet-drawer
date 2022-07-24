@@ -4,11 +4,12 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FThe-Igor%2Fswiftui-bottom-sheet-drawer%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/The-Igor/swiftui-bottom-sheet-drawer)
 
  ## Features
-- [x] Customize component with your own specs
+- [x] It does not rerender the background content while manipulating with the sheet
 - [x] iOS and macOS support
 - [x] **dark** and **light** scheme support
 - [x] Observing sheet positions on change if you need to react on it
 - [x] Responsive for any size change It's important for macOS while window size changing
+- [x] Customize component with your own specs
 
 ## Creation
 
