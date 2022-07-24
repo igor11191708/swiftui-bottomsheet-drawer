@@ -218,11 +218,9 @@ public struct BottomSheet<Content : View>: View {
     @ViewBuilder
     private var draggerButton: some View {
         if showDragButton {
-            VStack {
-                Capsule()
-                    .fill(Color.primary)
-                    .frame(width: 80, height: 5)
-            }
+            Capsule()
+                .fill(Color.primary)
+                .frame(width: 80, height: 5)
         } else {
             EmptyView()
         }
