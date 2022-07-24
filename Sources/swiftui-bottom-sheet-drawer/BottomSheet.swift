@@ -131,7 +131,6 @@ public struct BottomSheet<Content : View>: View {
     /// - Parameter maxH: Avalable height
     /// - Returns: Reverted offset value
     private func calculateLimit(_ height: CGFloat) -> CGFloat {
-
         var limit: CGFloat = 0
         let maxH = height - shift
         let half = maxH / 2
@@ -235,6 +234,7 @@ public struct BottomSheet<Content : View>: View {
 
 }
 
+#if DEBUG
 struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
@@ -242,3 +242,4 @@ struct BottomSheet_Previews: PreviewProvider {
         }
     }
 }
+#endif
