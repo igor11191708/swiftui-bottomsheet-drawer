@@ -246,6 +246,8 @@ public struct BottomSheet<Content : View>: View {
 
 struct BottomSheet_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheet(content: Color.clear.background(.thinMaterial))
+        ZStack {
+            BottomSheet(content: Color.clear.background(.thinMaterial))
+        }
     }
 }
