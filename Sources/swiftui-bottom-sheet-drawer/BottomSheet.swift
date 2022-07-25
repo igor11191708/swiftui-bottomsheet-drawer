@@ -246,6 +246,10 @@ public struct BottomSheet<Content : View>: View {
 
 
 public extension BottomSheet {
+    
+    /// Handler for changing the sheet position
+    /// - Parameter fn: callback to react
+    /// - Returns: View
     func onPositionChanged(_ fn: @escaping (BottomSheetPosision) -> ()) -> some View {
         self.onPreferenceChange(BottomSheetPosisionKey.self) {
             fn($0)
