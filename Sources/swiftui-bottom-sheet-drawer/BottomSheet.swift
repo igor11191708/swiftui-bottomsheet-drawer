@@ -235,11 +235,20 @@ public struct BottomSheet<Content : View>: View {
 }
 
 #if DEBUG
-struct BottomSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            BottomSheet(content: Color.clear.background(.thinMaterial))
+    struct BottomSheet_Previews: PreviewProvider {
+        static var previews: some View {
+            ZStack {
+                BottomSheet(content: Color.clear.background(.thinMaterial))
+            }
+        }
+    }
+#endif
+
+
+public extension BottomSheet {
+    func onPositionChanged(_ fn: @escaping (BottomSheetPosision) -> ()) -> some View {
+        self.onPreferenceChange(BottomSheetPosisionKey.self) {
+            fn($0)
         }
     }
 }
-#endif
