@@ -24,7 +24,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
     private var doAnimation: Bool = true
     
     /// Hide or show drag button
-    private var showDragButton: Bool = false
+    private var showDragButton: Bool = true
     
 // MARK: - Config
 
@@ -42,7 +42,6 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
 
     /// Dragging length after which trigger move to the next level depends on the direction of moving
     let dragThresholdToAct: CGFloat
-
 
     // MARK: - Lifecircle
 
@@ -75,12 +74,9 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
     public var body: some View {
         GeometryReader { proxy in
             let h = proxy.size.height
-            let w = proxy.size.width
 
             ZStack(alignment: .top) {
-                Color.clear.background(.thinMaterial)
-                    .clipShape(RoundedCornersShape(tl: 30, tt: 30, width: w, height: h))
-                    .shadow(color: .primary.opacity(0.05), radius: 2, x: 1, y: -2)
+                backgroundTpl(proxy.size)
                 content
             }
                 .offset(y: h - shift)
@@ -93,7 +89,18 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
     }
 
     // MARK: - Private
-
+    
+    /// Background Tpl
+    /// - Parameter size: Available size
+    @ViewBuilder
+    func backgroundTpl(_ size : CGSize) -> some View{
+        let h = size.height
+        let w = size.width
+        Color.clear.background(.thinMaterial)
+            .clipShape(RoundedCornersShape(tl: 30, tt: 30, width: w, height: h))
+            .shadow(color: .primary.opacity(0.05), radius: 2, x: 1, y: -2)
+    }
+    
     /// Define gesture operation processing
     /// - Parameter height: Available height
     /// - Returns: Gesture
