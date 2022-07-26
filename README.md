@@ -24,8 +24,8 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
 ### Builder
 You can use builder methods to change some specs
 
-* `hideDragButton` - Hide or show drag button
-* `withoutAnimation` - Animate move
+* `hideDragButton` - Hide drag button
+* `withoutAnimation` - Trun off animation
 
 ```swift
         ZStack {
