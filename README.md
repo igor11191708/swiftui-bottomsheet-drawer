@@ -21,14 +21,29 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
         }
 ```
 
+### Builder
+You can use builder methods to change some specs
+
+* `hideDragButton` - Hide or show drag button
+* `withoutAnimation` - Animate move
+
+```swift
+        ZStack {
+            BottomSheet(content: Color.clear.background(.thinMaterial))
+            .hideDragButton()
+            .withoutAnimation()
+        }
+```
+
+
 ### Optional
 
 * `shift` - Visible height of the sheet drawer
 * `topIndentation` - Space from the very top to the max height drawer can reach
-* `showDragButton` - Hide or show drag button
+
 * `draggerHeight` - Space sensitive for dragging
 * `dragThresholdToAct` - Dragging length after which trigger move to the next level depending on the direction of moving
-* `doAnimation` - Animate move
+
 
 
 ### Observing sheet positions

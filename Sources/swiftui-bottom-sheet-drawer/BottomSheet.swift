@@ -10,7 +10,7 @@ import SwiftUI
 
 /// Bottom sheet drawer widget
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
-public struct BottomSheet<Content : View>: View {
+public struct BottomSheet<Content : View>: IBottomSheetView {
 
     private typealias Position = BottomSheetPosision
 
@@ -20,6 +20,12 @@ public struct BottomSheet<Content : View>: View {
     /// Current position
     @State private var position: BottomSheetPosision
 
+    /// Animate move
+    private var doAnimation: Bool = true
+    
+    /// Hide or show drag button
+    private var showDragButton: Bool = false
+    
 // MARK: - Config
 
     /// View
@@ -31,17 +37,12 @@ public struct BottomSheet<Content : View>: View {
     /// Space from the very top to the max height drawer can reach
     let topIndentation: CGFloat
 
-    /// Hide or show drag button
-    let showDragButton: Bool
-
     ///Avalable space to do dragging
     let draggerHeight: CGFloat
 
     /// Dragging length after which trigger move to the next level depends on the direction of moving
     let dragThresholdToAct: CGFloat
 
-    /// Animate move
-    let doAnimation: Bool
 
     // MARK: - Lifecircle
 
@@ -58,18 +59,14 @@ public struct BottomSheet<Content : View>: View {
         content: Content,
         shift: CGFloat = 88,
         topIndentation: CGFloat = 50,
-        showDragButton: Bool = true,
         draggerHeight: CGFloat = 50,
-        dragThresholdToAct: CGFloat = 25,
-        doAnimation: Bool = true
+        dragThresholdToAct: CGFloat = 25
     ) {
         self.content = content
         self.topIndentation = max(topIndentation, 0)
         self.shift = max(shift, 25)
-        self.showDragButton = showDragButton
         self.draggerHeight = min(draggerHeight, 25)
         self.dragThresholdToAct = max(dragThresholdToAct, 0)
-        self.doAnimation = doAnimation
 
         self._position = State(initialValue: .down(max(shift, 25)))
     }
@@ -234,18 +231,28 @@ public struct BottomSheet<Content : View>: View {
 
 }
 
-#if DEBUG
-    struct BottomSheet_Previews: PreviewProvider {
-        static var previews: some View {
-            ZStack {
-                BottomSheet(content: Color.clear.background(.thinMaterial))
-            }
-        }
-    }
-#endif
-
-
 public extension BottomSheet {
+    
+    // MARK: - Builder methods
+    
+    /// Hide dragging button
+    /// - Returns: Sheet with hidden button
+    func hideDragButton() -> Self{
+        var view = self
+        view.showDragButton = false
+        return view
+    }
+    
+    
+    ///  Trun off animation
+    /// - Returns: Sheet without animation
+    func withoutAnimation() -> Self{
+        var view = self
+        view.doAnimation = false
+        return view
+    }
+    
+    // MARK: - Event methods
     
     /// Handler for changing the sheet position
     /// - Parameter fn: callback to react
@@ -256,3 +263,14 @@ public extension BottomSheet {
         }
     }
 }
+
+#if DEBUG
+    struct BottomSheet_Previews: PreviewProvider {
+        static var previews: some View {
+            ZStack {
+                BottomSheet(content: Color.clear.background(.thinMaterial))
+            }
+        }
+    }
+#endif
+
