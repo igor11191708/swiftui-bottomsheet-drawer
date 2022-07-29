@@ -4,7 +4,7 @@
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FThe-Igor%2Fswiftui-bottom-sheet-drawer%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/The-Igor/swiftui-bottom-sheet-drawer)
 
  ## Features
-- [x] It does not rerender the background content while manipulating with the sheet
+- [x] It does not re-render the background content while manipulating with the sheet
 - [x] iOS and macOS support
 - [x] **dark** and **light** scheme support
 - [x] Observing sheet positions on change if you need to react on it
@@ -13,7 +13,7 @@
 
 ## Creation
 
-Put the component into a absolute coordinate space like *ZStack* or *GeometryReader* and just pass a content that's it to start with sheet drawer.
+Put the component into an absolute coordinate space like *ZStack* or *GeometryReader* and just pass a content that's it to start with sheet drawer.
 
 ```swift
         ZStack {
@@ -25,7 +25,7 @@ Put the component into a absolute coordinate space like *ZStack* or *GeometryRea
 You can use builder methods to change some specs
 
 * `hideDragButton` - Hide drag button
-* `withoutAnimation` - Trun off animation
+* `withoutAnimation` - Turn off animation
 
 ```swift
         ZStack {
@@ -48,15 +48,15 @@ You can use builder methods to change some specs
 
 ### Observing sheet positions
 Observe sheet positions on change if you need to react on it in the external context of the component. For example to update layout of the drawer content according a new size of the height.
-Possition **BottomSheetPosision** is passed with **height** of the sheet. 
+Position **BottomSheetPosition** is passed with **height** of the sheet. 
 **height** - is enum associated with value of type *CGFloat*
 
 ```swift
 
-    @State private var position: BottomSheetPosision
+    @State private var position: BottomSheetPosition
     
         BottomSheet(
-            content: SheetCintentView(position: $position)
+            content: SheetContentView(position: $position)
         )
         .onPositionChanged{
             position = $0
@@ -71,7 +71,7 @@ Possition **BottomSheetPosision** is passed with **height** of the sheet.
 
 ## SwiftUI example of using package
 
-Folow the link to get the example exposed in the video: 
+Follow the link to get the example exposed in the video: 
 
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/swiftui-bottom-sheet-drawer/blob/main/Sources/img/wallet_02.gif)](https://youtu.be/jLu7gbzGXTo)
 

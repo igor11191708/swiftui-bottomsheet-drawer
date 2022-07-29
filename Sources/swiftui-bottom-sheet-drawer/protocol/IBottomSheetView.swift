@@ -22,6 +22,6 @@ public protocol IBottomSheetView : View{
     // MARK: - Event methods
     
     /// Handler for changing the sheet position
-    func onPositionChanged(_ fn: @escaping (BottomSheetPosision) -> ()) -> V
+    func onPositionChanged(_ fn: @escaping (BottomSheetPosition) -> ()) -> V
         
 }

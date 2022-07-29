@@ -1,5 +1,5 @@
 //
-//  BottomSheetPosision.swift
+//  BottomSheetPosition.swift
 //  
 //
 //  Created by Igor Shelopaev on 22.07.2022.
@@ -10,7 +10,7 @@ import SwiftUI
 
 /// Three level positions for sheet drawer
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
-public enum BottomSheetPosision: Comparable{
+public enum BottomSheetPosition: Comparable{
     
     case up(CGFloat)
     
@@ -40,7 +40,7 @@ public enum BottomSheetPosision: Comparable{
     }
        
     /// Check is middle position
-    public var isModdle: Bool{
+    public var isMiddle: Bool{
         if case .middle(_) = self{
             return true
         }
@@ -57,7 +57,7 @@ public enum BottomSheetPosision: Comparable{
         return false
     }
         
-    /// Get currently avalable height
+    /// Get currently available height
     public var getHeight : CGFloat{
         switch self{
         case .up(let height): return height

@@ -12,13 +12,13 @@ import SwiftUI
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
 public struct BottomSheet<Content : View>: IBottomSheetView {
 
-    private typealias Position = BottomSheetPosision
+    private typealias Position = BottomSheetPosition
 
     /// Offset relatively the base
     @State private var offset: CGFloat = 0
 
     /// Current position
-    @State private var position: BottomSheetPosision
+    @State private var position: BottomSheetPosition
 
     /// Animate move
     private var doAnimation: Bool = true
@@ -37,7 +37,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
     /// Space from the very top to the max height drawer can reach
     let topIndentation: CGFloat
 
-    ///Avalable space to do dragging
+    ///Available space to do dragging
     let draggerHeight: CGFloat
 
     /// Dragging length after which trigger move to the next level depends on the direction of moving
@@ -52,7 +52,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
     ///   - topIndentation: Space from the very top to the max height drawer can reach
     ///   - showDragButton: Hide or show drag button
     ///   - draggerHeight: Space sensitive for dragging
-    ///   - dragThresholdToAct: Dragging lenght after wich trigger move to the next level deppends on the direction of moving
+    ///   - dragThresholdToAct: Dragging length after which trigger move to the next level depends on the direction of moving
     ///   - doAnimation: Animate move
     public init(
         content: Content,
@@ -83,7 +83,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
                 .offset(y: -offset)
                 .overlay(dragger(h), alignment: .top)
         }.ignoresSafeArea(.all, edges: .bottom)
-            .preference(key: BottomSheetPosisionKey.self, value: position)
+            .preference(key: BottomSheetPositionKey.self, value: position)
             .frame(minHeight: shift)
             .messureSize(updateSheetSize)
     }
@@ -131,8 +131,8 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
 
     /// Get limit by new height
     /// - Window size is changed then need to recalculate limit
-    /// - Reset drawer position if drag lenght is not enoght to change the drawer position
-    /// - Parameter maxH: Avalable height
+    /// - Reset drawer position if drag length is not enough to change the drawer position
+    /// - Parameter maxH: Available height
     /// - Returns: Reverted offset value
     private func calculateLimit(_ height: CGFloat) -> CGFloat {
         var limit: CGFloat = 0
@@ -141,7 +141,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
 
         if position.isUp {
             limit = maxH - topIndentation
-        } else if position.isModdle {
+        } else if position.isMiddle {
             limit = half
         }
 
@@ -150,7 +150,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
 
     /// Get spect for the next position
     /// - Parameters:
-    ///   - maxH: Avalable height
+    ///   - maxH: Available height
     ///   - up: Direction
     /// - Returns: Bunch of specs for the next position
     private func moveNext(_ height: CGFloat, up: Bool) -> (limit: CGFloat, position: Position) {
@@ -180,7 +180,7 @@ public struct BottomSheet<Content : View>: IBottomSheetView {
     /// Process end drag
     /// - Parameters:
     ///   - value: Bunch of drag values on end drag
-    ///   - height: Avalable height
+    ///   - height: Available height
     private func onEndDrag(_ value: DragGesture.Value, _ height: CGFloat) {
         let start = value.startLocation.y
         let end = value.location.y
@@ -251,7 +251,7 @@ public extension BottomSheet {
     }
     
     
-    ///  Trun off animation
+    ///  Turn off animation
     /// - Returns: Sheet without animation
     func withoutAnimation() -> Self{
         var view = self
@@ -264,8 +264,8 @@ public extension BottomSheet {
     /// Handler for changing the sheet position
     /// - Parameter fn: callback to react
     /// - Returns: View
-    func onPositionChanged(_ fn: @escaping (BottomSheetPosision) -> ()) -> some View {
-        self.onPreferenceChange(BottomSheetPosisionKey.self) {
+    func onPositionChanged(_ fn: @escaping (BottomSheetPosition) -> ()) -> some View {
+        self.onPreferenceChange(BottomSheetPositionKey.self) {
             fn($0)
         }
     }
