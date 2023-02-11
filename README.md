@@ -71,8 +71,6 @@ Position **BottomSheetPosition** is passed with **height** of the sheet.
 
 ## SwiftUI example of using package
 
-Follow the link to get the example exposed in the video: 
-
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/swiftui-bottom-sheet-drawer/blob/main/Sources/img/wallet_02.gif)](https://youtu.be/jLu7gbzGXTo)
 
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/swiftui-bottom-sheet-drawer/blob/main/Sources/img/wallet_01.png)](https://youtu.be/jLu7gbzGXTo)
