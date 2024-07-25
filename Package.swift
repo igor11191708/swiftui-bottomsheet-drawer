@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "swiftui-bottom-sheet-drawer",
     platforms: [
-        .macOS("12"), .iOS("15"), .tvOS("15"), .watchOS("6"),
+        .macOS("12"), .iOS("15"), .watchOS("10"),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.

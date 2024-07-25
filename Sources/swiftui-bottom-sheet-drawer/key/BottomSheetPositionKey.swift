@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Key for emerging drawer sheet position
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 10.0, *)
 public struct BottomSheetPositionKey: PreferenceKey {
     
     static public var defaultValue: BottomSheetPosition = .down(0)

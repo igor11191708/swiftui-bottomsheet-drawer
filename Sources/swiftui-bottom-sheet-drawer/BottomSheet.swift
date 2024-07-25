@@ -9,7 +9,7 @@ import SwiftUI
 
 
 /// Bottom sheet drawer widget
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 6.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 10.0, *)
 public struct BottomSheet<Content : View>: IBottomSheetView {
 
     private typealias Position = BottomSheetPosition
