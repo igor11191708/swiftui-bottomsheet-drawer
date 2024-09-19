@@ -1,4 +1,4 @@
 version: 1
 builder:
   configs:
-    - documentation_targets: [swiftui-bottomsheet-drawer]
+    - documentation_targets: [swiftui-bottom-sheet-drawer]
